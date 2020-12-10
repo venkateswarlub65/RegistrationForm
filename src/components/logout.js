@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Redirect, Link } from 'react-router-dom';
 
-
-class Logout extends React.Component {
+class logout extends Component {
+    constructor(props) {
+        super(props)
+        localStorage.removeItem('token')
+    }
     render() {
         return (
             <div>
-                Logout
+                <h1>Log out</h1>
+                <Link to='/'>Login Again</Link>
             </div>
         )
     }
 }
 
-export default Logout;
+export default logout;
